@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Home page for Wed and Computer Programming Certificate" />
+  <meta name="author" content="Uzukwu Chukwugoziri" />
+  <title>Home | Web and Computer Programming Certificate</title>
+  <link rel="stylesheet" href="styles/styles.css"> <!-- Link to your external CSS -->
+  <script src="scripts/javascript.js" defer></script> <!-- JavaScript file if needed -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Merriweather&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <img src="images/profile.jpg" alt="Photo of Your Name" width="60" height="60" />
+    <span>Uzukwu Chukwugoziri</span>
+  </header>
+
+  <nav>
+    <button id="menu-toggle">&#9776;</button>
+    <ul id="nav-menu">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="chamber/index.html">Chamber</a></li>
+      <li><a href="final/index.html">Final</a></li>
+      <li><a href="https://github.com/melchy34" target="_blank">GitHub Profile</a></li>
+      <li><a href="https://www.linkedin.com/in/melchiades-uzukwu" target="_blank">LinkedIn</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Web and Computer Programming Certificate</h1>
+        <section id="courses">
+            <div class="buttons">
+              <button id="allCourses">All Courses</button>
+              <button id="wddCourses">WDD Courses</button>
+              <button id="cseCourses">CSE Courses</button>
+            </div>
+          
+            <h2>Total number of courses is 6</h2>
+
+            <div id="courseContainer"></div>
+          
+            <p id="totalCredits"></p>
+          
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Web Development Projects | Uzukwu Chukwugoziri | Lagos, Nigeria</p>
+    <p id="lastModified"></p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("lastModified").textContent = `Last Modified: ${document.lastModified}`;
+
+    document.getElementById("menu-toggle").addEventListener("click", () => {
+      document.getElementById("nav-menu").classList.toggle("open");
+    });
+  </script>
+</body>
+</html>
