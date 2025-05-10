@@ -30,6 +30,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const wddBtn = document.getElementById("wddCourses");
     const cseBtn = document.getElementById("cseCourses");
     const creditDisplay = document.getElementById("totalCredits");
+    const searchInput = document.getElementById("searchInput");
+    const completedCheckbox = document.getElementById("completedCheckbox");
+
+    let currentFilter = "all"; // Track current filter
   
     function renderCourses(courseList) {
       container.innerHTML = "";

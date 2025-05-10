@@ -33,7 +33,7 @@ body {
     background-color: #006699;
     color: white;
   }
-  
+
   #menu-toggle {
     display: none;
     background: none;
@@ -74,6 +74,13 @@ body {
     margin: 0 auto;
   }
   
+  .course.completed::after {
+  content: "✔"; /* Check mark */
+  font-size: 20px;
+  color: #28a745; /* Green check mark */
+  margin-left: 10px;
+} 
+
   main h1 {
     font-family: 'Merriweather', serif;
     text-align: center;
