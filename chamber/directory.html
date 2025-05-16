@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Directory of Chamber Members">
+  <meta name="author" content="Chukwugoziri Uzukwu">
+
+  <title>Chamber Members Directory</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+  <!-- Facebook Social Media Meta Tags -->
+  <meta property="og:title" content="Chamber Members Directory">
+  <meta property="og:description" content="A directory of all the members of our Chamber of Commerce.">
+  <meta property="og:image" content="images/social-preview.jpg">
+  <meta property="og:url" content="https://your-website.com/directory.html">
+
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-top">
+      <img src="images/profile.jpg" alt="Chamber of Commerce" width="80">
+      <h1>Chamber of Commerce</h1>
+      <button id="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+    </div>
+    <nav id="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <h2>Member Directory</h2>
+    <button id="toggleView">Toggle View (Grid/List)</button>
+
+    <section id="member-list" class="grid-view">
+      <div class="member-card"><img src="member1.jpg" alt="Business Name"><h3>Business Tag</h3><p>Description 1</p></div>
+      <div class="member-card"><img src="member2.jpg" alt="Business Name"><h3>Business Tag</h3><p>Description 2</p></div>
+      <div class="member-card"><img src="member3.jpg" alt="Business Name"><h3>Business Tag</h3><p>Description 3</p></div>
+      <div class="member-card"><img src="member4.jpg" alt="Business Name"><h3>Business Tag</h3><p>Description 4</p></div>
+      <div class="member-card"><img src="member5.jpg" alt="Business Name"><h3>Business Tag</h3><p>Description 5</p></div>
+      <div class="member-card"><img src="member6.jpg" alt="Business Name"><h3>Business Tag</h3><p>Description 6</p></div>
+      <div class="member-card"><img src="member7.jpg" alt="Business Name"><h3>Business Tag</h3><p>Description 7</p></div>
+      <!-- Add more as needed -->
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>Contact us: 1/2 Emmanuel Street, Hometown, St. John | (+234) 123-4567 | info@ourchamber.com</p>
+    <p>&copy; <span id="year"></span> Our Local Chamber of Commerce | Developed by Uzukwu Chukwugoziri | WDD 231</p>
+    <p>Last Modified: <span id="lastModified"></span></p>
+
+    <div class="social-media">
+      <a href="https://www.in.com" target="_blank"><img src="images/in.jpg" alt="LinkedIn"></a>
+      <a href="https://www.twitter.com" target="_blank"><img src="images/twitter.jpg" alt="Twitter"></a>
+      <a href="https://www.youtube.com" target="_blank"><img src="images/youtube.png" alt="YouTube"></a>
+    </div>
+
+    <div class="footer-link">
+      <a href="trips.html">Trips Page</a>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Toggle view between grid and list
+    const toggleBtn = document.getElementById('toggleView');
+    const memberList = document.getElementById('member-list');
+
+    toggleBtn.addEventListener('click', () => {
+      memberList.classList.toggle('grid-view');
+      memberList.classList.toggle('list-view');
+    });
+
+    // Hamburger menu toggle
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      document.getElementById('main-nav').classList.toggle('open');
+    });
+
+    // Set year and last modified
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("lastModified").textContent = document.lastModified;
+  </script>
+</body>
+</html>
