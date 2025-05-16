@@ -1,3 +1,23 @@
+<!-- JavaScript -->
+  <script>
+    // Toggle view between grid and list
+    const toggleBtn = document.getElementById('toggleView');
+    const memberList = document.getElementById('member-list');
+
+    toggleBtn.addEventListener('click', () => {
+      memberList.classList.toggle('grid-view');
+      memberList.classList.toggle('list-view');
+    });
+
+    // Hamburger menu toggle
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      document.getElementById('main-nav').classList.toggle('open');
+    });
+
+    // Set year and last modified
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("lastModified").textContent = document.lastModified;
+  </script>
 [
   {
     "name": "Acme Corp",
