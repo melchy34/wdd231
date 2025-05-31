@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Join - Membership Application</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 1rem;
+    line-height: 1.5;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    background: #f2f3f5;
+    color: #222;
+  }
+  header, footer {
+    background-color: #004466;
+    color: white;
+    padding: 1rem 2rem;
+  }
+  header h1 {
+    margin: 0;
+  }
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+  }
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+  }
+  nav a[aria-current="page"] {
+    text-decoration: underline;
+  }
+  nav a:hover, nav a:focus {
+    text-decoration: underline;
+    outline-offset: 2px;
+    outline: 2px solid #fff;
+  }
+  main {
+    flex: 1 1 350px;
+    max-width: 600px;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 6px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  }
+  main h2 {
+    margin-top: 0;
+  }
+  form label {
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="tel"],
+  form textarea,
+  form select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.25rem;
+    box-sizing: border-box;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  form textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+  input[type="submit"] {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    background-color: #004466;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  input[type="submit"]:hover,
+  input[type="submit"]:focus {
+    background-color: #006699;
+    outline-offset: 2px;
+    outline: 2px solid #004466;
+  }
+
+  /* Membership cards container */
+  .membership-cards {
+    flex: 1 1 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    animation: fadeInSlide 1.5s ease forwards;
+  }
+
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 1rem;
+    background-color: #e9f1f7;
+    box-shadow: 1px 2px 5px rgba(0,0,0,0.1);
+  }
+  .card h3 {
+    margin-top: 0;
+  }
+  .card a {
+    color: #004466;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .card a:hover,
+  .card a:focus {
+    text-decoration: underline;
+    outline-offset: 2px;
+    outline: 2px solid #004466;
+  }
+
+  /* Modal styling */
+  dialog {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    max-width: 400px;
+    padding: 1.5rem;
+  }
+  dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+  }
+  dialog button.close-btn {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    background-color: #004466;
+    color: white;
+    border: none;
+    border-radius: 4px;
+  }
+  dialog button.close-btn:hover,
+  dialog button.close-btn:focus {
+    background-color: #006699;
+    outline-offset: 2px;
+    outline: 2px solid #004466;
+  }
+
+  /* Responsive: on small screens cards below form */
+  @media (max-width: 800px) {
+    body {
+      flex-direction: column;
+    }
+    .membership-cards {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .card {
+      flex: 1 1 calc(50% - 1rem);
+    }
+  }
+
+  /* Animation */
+  @keyframes fadeInSlide {
+    0% {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    50% {
+      opacity: 0.6;
+      transform: translateX(15px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+</style>
+</head>
+<body>
+<main>
+  <h2>Membership Application Form</h2>
+  <form method="get" action="thankyou.html" novalidate>
+    <label for="firstName" title="Enter your first name">
+      First Name:
+      <input
+        type="text"
+        id="firstName"
+        name="firstName"
+        autocomplete="given-name"
+        required
+        pattern="[A-Za-z\- ]+"
+        title="First name should only contain letters, hyphens, or spaces"
+      />
+    </label>
+
+    <label for="lastName" title="Enter your last name">
+      Last Name:
+      <input
+        type="text"
+        id="lastName"
+        name="lastName"
+        autocomplete="family-name"
+        required
+        pattern="[A-Za-z\- ]+"
+        title="Last name should only contain letters, hyphens, or spaces"
+      />
+    </label>
+
+    <label for="orgTitle" title="Enter your organizational title">
+      Organizational Title:
+      <input
+        type="text"
+        id="orgTitle"
+        name="orgTitle"
+        autocomplete="organization-title"
+        pattern="[A-Za-z\- ]{7,}"
+        title="Only letters, hyphens, spaces, minimum 7 characters"
+      />
+    </label>
+
+    <label for="email" title="Enter your email address">
+      Email Address:
+      <input
+        type="email"
+        id="email"
+        name="email"
+        autocomplete="email"
+        required
+        placeholder="example@email.com"
+      />
+    </label>
+
+    <label for="phone" title="Enter your mobile phone number">
+      Mobile Phone Number:
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        autocomplete="tel"
+        required
+        pattern="[\d\s\-\+\(\)]{7,}"
+        title="Please enter a valid phone number"
+      />
+    </label>
+
+    <label for="orgName" title="Enter your business or organization's name">
+      Business/Organization Name:
+      <input
+        type="text"
+        id="orgName"
+        name="orgName"
+        autocomplete="organization"
+        required
+      />
+    </label>
+
+    <label for="membership" title="Select your membership level">
+      Membership Level:
+      <select id="membership" name="membership" required>
+        <option value="" disabled selected>Select a membership</option>
+        <option value="np">NP Membership (Non-profit, no fee)</option>
+        <option value="bronze">Bronze Membership</option>
+        <option value="silver">Silver Membership</option>
+        <option value="gold">Gold Membership</option>
+      </select>
+    </label>
+
+    <label for="description" title="Describe your business or organization">
+      Business/Organization Description:
+      <textarea id="description" name="description" title="Describe your business or organization"></textarea>
+    </label>
+
+    <input type="hidden" id="timestamp" name="timestamp" />
+
+    <input type="submit" value="Submit Application" />
+  </form>
+</main>
+
+<aside class="membership-cards" aria-label="Membership Levels Information">
+  <div class="card">
+    <h3>NP Membership</h3>
+    <p>No fee. For non-profit organizations.</p>
+    <a href="#" data-modal="modal-np" aria-haspopup="dialog" aria-controls="modal-np" role="button">More info</a>
+  </div>
+  <div class="card">
+    <h3>Bronze Membership</h3>
+    <p>Affordable benefits for growing organizations.</p>
+    <a href="#" data-modal="modal-bronze" aria-haspopup="dialog" aria-controls="modal-bronze" role="button">More info</a>
+  </div>
+  <div class="card">
+    <h3>Silver Membership</h3>
+    <p>Enhanced visibility and special events.</p>
+    <a href="#" data-modal="modal-silver" aria-haspopup="dialog" aria-controls="modal-silver" role="button">More info</a>
+  </div>
+  <div class="card">
+    <h3>Gold Membership</h3>
+    <p>Premium benefits and spotlight advertising.</p>
+    <a href="#" data-modal="modal-gold" aria-haspopup="dialog" aria-controls="modal-gold" role="button">More info</a>
+  </div>
+</aside>
+
+<!-- Modals -->
+<dialog id="modal-np" aria-modal="true" role="dialog" aria-labelledby="np-title" aria-describedby="np-desc">
+  <h2 id="np-title">NP Membership Benefits</h2>
+  <p id="np-desc">No fee for non-profit organizations. Access to basic events and newsletters.</p>
+  <button class="close-btn" aria-label="Close NP Membership benefits dialog">Close</button>
+</dialog>
+
+<dialog id="modal-bronze" aria-modal="true" role="dialog" aria-labelledby="bronze-title" aria-describedby="bronze-desc">
+  <h2 id="bronze-title">Bronze Membership Benefits</h2>
+  <p id="bronze-desc">Includes invitations to networking events and training workshops.</p>
+  <button class="close-btn" aria-label="Close Bronze Membership benefits dialog">Close</button>
+</dialog>
+
+<dialog id="modal-silver" aria-modal="true" role="dialog" aria-labelledby="silver-title" aria-describedby="silver-desc">
+  <h2 id="silver-title">Silver Membership Benefits</h2>
+  <p id="silver-desc">All Bronze benefits plus advertising spotlight and event discounts.</p>
+  <button class="close-btn" aria-label="Close Silver Membership benefits dialog">Close</button>
+</dialog>
+
+<dialog id="modal-gold" aria-modal="true" role="dialog" aria-labelledby="gold-title" aria-describedby="gold-desc">
+  <h2 id="gold-title">Gold Membership Benefits</h2>
+  <p id="gold-desc">Premium benefits including all Silver perks plus VIP event access and training discounts.</p>
+  <button class="close-btn" aria-label="Close Gold Membership benefits dialog">Close</button>
+</dialog>
+<script>
+  // Set timestamp to current date/time ISO string when page loads
+  document.getElementById('timestamp').value = new Date().toISOString();
+
+  // Modal open/close logic with focus management
+  let lastFocusedElement;
+
+  document.querySelectorAll('a[data-modal]').forEach(link => {
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      lastFocusedElement = document.activeElement; // save triggering link
+      const modalId = link.getAttribute('data-modal');
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.showModal();
+        const closeBtn = modal.querySelector('button.close-btn');
+        if (closeBtn) closeBtn.focus();
+      }
+    });
+  });
+
+  document.querySelectorAll('dialog button.close-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      const dialog = button.closest('dialog');
+      dialog.close();
+      if (lastFocusedElement) lastFocusedElement.focus();
+    });
+  });
+
+  // Close dialog on backdrop click
+  document.querySelectorAll('dialog').forEach(dialog => {
+    dialog.addEventListener('click', e => {
+      if (e.target === dialog) {
+        dialog.close();
+        if (lastFocusedElement) lastFocusedElement.focus();
+      }
+    });
+  });
+
+  // Keyboard accessibility: trap focus inside modal and close on Escape
+  document.querySelectorAll('dialog').forEach(dialog => {
+    dialog.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        dialog.close();
+        if (lastFocusedElement) lastFocusedElement.focus();
+      }
+      if (e.key === 'Tab') {
+        const focusableElements = dialog.querySelectorAll('button.close-btn, a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        const firstEl = focusableElements[0];
+        const lastEl = focusableElements[focusableElements.length - 1];
+        if (!focusableElements.length) return;
+
+        if (e.shiftKey) { // Shift + Tab
+          if (document.activeElement === firstEl) {
+            e.preventDefault();
+            lastEl.focus();
+          }
+        } else { // Tab
+          if (document.activeElement === lastEl) {
+            e.preventDefault();
+            firstEl.focus();
+          }
+        }
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
