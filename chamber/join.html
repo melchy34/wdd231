@@ -62,7 +62,7 @@
         type="text"
         id="orgTitle"
         name="orgTitle"
-        autocomplete="organization-title"
+        autocomplete="organization"
         pattern="[A-Za-z\- ]{7,}"
         title="Only letters, hyphens, spaces, minimum 7 characters"
       />
@@ -107,7 +107,7 @@
     <label for="membership" title="Select your membership level">
       Membership Level:
       <select id="membership" name="membership" required>
-        <option value="" disabled selected>Select a membership</option>
+        <option value="" selected hidden>Select a membership</option>
         <option value="np">NP Membership (Non-profit, no fee)</option>
         <option value="bronze">Bronze Membership</option>
         <option value="silver">Silver Membership</option>
