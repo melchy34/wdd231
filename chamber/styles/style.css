@@ -1,0 +1,56 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f5f5;
+}
+
+header, footer {
+  background-color: #2a9d8f;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+nav a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+}
+
+main.discover-layout {
+  display: grid;
+  grid-template-areas:
+    "sidebar"
+    "cards";
+  grid-template-columns: 1fr;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: #e0f7f4;
+  padding: 1rem;
+  text-align: center;
+}
+
+.cards {
+  grid-area: cards;
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.card {
+  background: white;
+  padding: 1rem;
+  border: 1px solid #ddd;
+}
+
+.card figure {
+  margin: 0;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
