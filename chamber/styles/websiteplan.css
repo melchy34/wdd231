@@ -7,7 +7,7 @@
 
 /* Body & Font */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   background-color: #f5fdf8;
   color: #333;
   line-height: 1.6;
@@ -146,6 +146,14 @@ nav a.active {
   left: 0;
   width: 100%; /* updated from 50% */
   height: 100%;
+}
+
+.video-section {
+  background-color: #f4fdf6;
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 2px solid #c8e6c9;
+  border-bottom: 2px solid #c8e6c9;
 }
 
 /* Footer */
