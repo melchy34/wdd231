@@ -136,7 +136,7 @@ nav a.active {
 .video-container {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 aspect ratio */
-  height: 50;
+  height: 0;
   overflow: hidden;
 }
 
@@ -144,7 +144,7 @@ nav a.active {
   position: absolute;
   top: 0;
   left: 0;
-  width: 50%;
+  width: 100%; /* updated from 50% */
   height: 100%;
 }
 
